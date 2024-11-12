@@ -3,10 +3,14 @@
 require "test_helper"
 
 class NavbarComponentTest < ViewComponent::TestCase
-  def test_component_renders_something_useful
-    # assert_equal(
-    #   %(<span>Hello, components!</span>),
-    #   render_inline(NavbarComponent.new(message: "Hello, components!")).css("span").to_html
-    # )
+  def test_component_renders_navbar
+    # Render the component
+    rendered_component = render_inline(NavbarComponent.new)
+
+    # Assert that the navbar contains the expected elements
+    assert_includes rendered_component.css("nav").to_html, "DogeBank"
+    assert_includes rendered_component.css("a").to_html, "Buy Dogecoin"
+    assert_includes rendered_component.css("a").to_html, "Pricing"
+    assert_includes rendered_component.css("a").to_html, "About"
   end
 end
