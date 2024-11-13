@@ -9,9 +9,14 @@
       </button>
     </div>
     <ul id="menu" class="hidden lg:flex space-x-4">
-                 <li><a href="#buy-dogecoin" class="hover:text-gray-400">Buy Dogecoin</a></li>
+      <li><a href="<%= new_payment_path %>" class="hover:text-gray-400">Buy Dogecoin</a></li>
       <li><a href="#pricing" class="hover:text-gray-400">Pricing</a></li>
       <li><a href="#about" class="hover:text-gray-400">About</a></li>
+      <% if helpers.authenticated? %>
+        <li><%= link_to "Logout", logout_path, data: { turbo_method: :delete }, class: "hover:text-gray-400" %></li>
+      <% else %>
+        <li><%= link_to "Sign In", login_path, class: "hover:text-gray-400" %></li>
+      <% end %>
     </ul>
   </div>
 </nav>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "payments/new"
+  get "payments/create"
   get "users/new"
   get "users/create"
   get "home/index"
@@ -24,4 +26,5 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new", as: :login
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy", as: :logout
+  resources :payments, only: [ :new, :create ]
 end

@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id  # Log the user in after sign-up
       redirect_to root_path, notice: "Welcome to DogeBank!"
     else
+      flash.now[:alert] = @user.errors.full_messages.to_sentence
       render :new, status: :unprocessable_entity
     end
   end
