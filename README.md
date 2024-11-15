@@ -47,3 +47,5 @@ Check out our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
+## Contact
+For questions or feedback, please reach out to [Contact] at [jorgep4dill4@gmail.com] or via https://github.com/JorgePadilla/DogecoinBank
